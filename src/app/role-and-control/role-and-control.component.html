@@ -1,0 +1,109 @@
+<div class="container">
+    <mat-card class="card" style="height: 10%;">
+        <mat-card-content style="font-weight: 500;">
+            Maintain Role Level Access Control
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card" style="height: 90%;">
+        <mat-card-content>
+            <div class="upperPart" style="background-color: rgb(220, 236, 241); padding: 10px;">
+                <!-- First Section -->
+                <div>
+                    <h2 style="font-size: 16px;">Search Criteria</h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <!-- Role Input Box -->
+                        <mat-form-field style="flex: 1;">
+                            <input matInput placeholder="Role" value="Branch Manager">
+                        </mat-form-field>
+
+                        <!-- Access Control Type Dropdown -->
+                        <mat-form-field style="flex: 1; margin-left: 10px;">
+                            <mat-label>Access Control Type</mat-label>
+                            <mat-select>
+                                <mat-option value="field-level" selected>Field Level</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <!-- Case Category Dropdown -->
+                        <mat-form-field style="flex: 1; margin-left: 10px;">
+                            <mat-label>Case Category</mat-label>
+                            <mat-select>
+                                <mat-option value="youtube-video">YouTube Video</mat-option>
+                                <mat-option value="other-tag">Other Tag</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- Second Section -->
+                <div style="margin-top: 10px;">
+                    <mat-form-field style="width: 100%;">
+                        <mat-label>Case Sub Category</mat-label>
+                        <mat-select>
+                            <mat-option value="address-update" selected>Address Update</mat-option>
+                            <mat-option value="stop-check">Stop Check</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <!-- Buttons Section -->
+                <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                    <button mat-button color="primary">Clear</button>
+                    <button mat-button color="primary">Search</button>
+                </div>
+            </div>
+
+            <div class="lowerPart" style="margin-top: 20px;">
+                <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Case Category Column -->
+                    <ng-container matColumnDef="caseCategory">
+                        <mat-header-cell *matHeaderCellDef> Case Category </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.caseCategory}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Case Sub Category Column -->
+                    <ng-container matColumnDef="caseSubCategory">
+                        <mat-header-cell *matHeaderCellDef> Case Sub Category </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.caseSubCategory}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Field Name Column -->
+                    <ng-container matColumnDef="fieldName">
+                        <mat-header-cell *matHeaderCellDef> Field Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.fieldName}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Access Type Column -->
+                    <ng-container matColumnDef="accessType">
+                        <mat-header-cell *matHeaderCellDef> Access Type </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.accessType}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Masking Preview Column -->
+                    <ng-container matColumnDef="maskingPreview">
+                        <mat-header-cell *matHeaderCellDef> Masking Preview </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.maskingPreview}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Actions Column -->
+                    <ng-container matColumnDef="actions">
+                        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-icon-button>
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                            <button mat-icon-button>
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

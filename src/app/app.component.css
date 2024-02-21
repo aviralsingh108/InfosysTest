@@ -1,0 +1,14 @@
+.breadcrumb {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 9%;
+}
+
+.breadcrumb span {
+  margin-right: 5px;
+}
+
+.breadcrumb span:last-child {
+  font-weight: bold;
+  color: #333; /* You can adjust the color */
+}

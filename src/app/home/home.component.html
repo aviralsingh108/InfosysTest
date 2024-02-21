@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="sidebar">
+        <app-sidebar (buttonClicked)="navigateToRoleAndControl()"></app-sidebar>
+    </div>
+
+    <div class="content">
+        <!-- <div class="breadcrumb">
+            <span>Home</span>
+            <span>&gt;</span>
+            <span>Admin</span>
+            <span>&gt;</span>
+            <span>Access Control</span>
+        </div> -->
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

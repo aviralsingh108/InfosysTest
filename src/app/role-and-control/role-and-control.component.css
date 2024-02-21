@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  margin-left: 8%;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card {
+  margin: 5px;
+  width: 97%;
+}
+
+.upperPart {
+  background-color: rgb(220, 236, 241);
+  padding: 10px;
+}
+
+.lowerPart {
+  margin-top: 20px;
+}
+
+.first-section, .second-section, .buttons-section {
+  margin-top: 10px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Adjustments for form fields */
+mat-form-field {
+  flex: 1;
+}
+
+/* Optional: Adjust card content */
+mat-card-content {
+  padding: 10px;
+}
+
+/* Optional: Adjust mat-table styles */
+.mat-table {
+  width: 100%;
+}
+
+.mat-header-row, .mat-row {
+  display: flex;
+}
+
+.mat-cell, .mat-header-cell {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mat-row:hover {
+  background-color: #f0f0f0;
+}

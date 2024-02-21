@@ -1,0 +1,28 @@
+
+
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  margin-top: 63px;
+  width: 8%;
+  background-color: blue;
+  z-index: 1000; /* Adjust z-index as needed */
+  display: flex;
+  flex-direction: column; /* Arrange buttons vertically */
+  justify-content: flex-start; /* Align buttons to the start of the column */}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+
+/* Add any additional styling as needed */
